@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <title>Controle de estoques</title>
 </head>
@@ -21,11 +21,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>01</td>
-                <td>Arroz</td>
-                <td>16</td>
-            </tr>
+            <?php 
+                foreach ($datas as $data) {
+                    echo "<tr>";
+                        echo "<td>" . $data['id'] . "</td>";
+                        echo "<td>" . $data['nome'] . "</td>";
+                        echo "<td>" . $data['preco'] . "</td>";
+                        echo "<td>
+                                <button> <i class='fa fa-check'> </i> </button>" ."
+                                <button><i class='fa fa-times'></i></button>
+                            </td>";
+                    echo "</tr>";
+                }
+            ?>
         </tbody>
     </table> 
     
