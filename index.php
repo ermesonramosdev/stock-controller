@@ -41,6 +41,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Estoque do Mercado</h2>
+            <p>Arroz: 5</p>
         </div>
     </div>
 
