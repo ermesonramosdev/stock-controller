@@ -2,7 +2,8 @@
     $json = file_get_contents(__DIR__ ."/../data/stock.json");
     $datas = json_decode($json, true);
 
-    $qtdTotal = array_reduce($datas, function($accumulator, $currentItem) {
+    //Olha a quantidade de produtos tem
+    $qtdProduct = array_reduce($datas, function($accumulator, $currentItem) {
         if(!isset($accumulator[$currentItem['nome']])) {
             $accumulator[$currentItem['nome']] = 1;
         } else {
@@ -11,5 +12,13 @@
 
         return $accumulator;
     }, []);
-   
-    print_r($qtdTotal);
+    //Olha o preço  de cada produto e soma tudo de acordo com cada chave
+   $qtdTotal = array_reduce($datas, function($accumulator, $currentItem) {
+        if(!isset($accumulator[$currentItem['nome']])) {
+            $accumulator[$currentItem['nome']] = $currentItem['preco'];
+        } else {
+            $accumulator[$currentItem['nome']] += $currentItem['preco'];
+        }
+
+        return $accumulator;
+   }, []);

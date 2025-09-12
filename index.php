@@ -41,7 +41,15 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Estoque do Mercado</h2>
-            <p>Arroz: 5</p>
+            <?php 
+                foreach($qtdProduct as $nameProduct => $amount) {
+                    foreach($qtdTotal as $namePrice => $price) {
+                        if ($nameProduct == $namePrice) {
+                            echo "<p>" . "<strong>" . $nameProduct . "</strong>" . ":" . $amount . "<strong> valor total: </strong>" . $price . "</p>" . "</hr>";
+                        }
+                    }
+                }
+            ?>
         </div>
     </div>
 
