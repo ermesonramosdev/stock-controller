@@ -1,4 +1,4 @@
-<?php include('stock/stock.php')?>
+<?php include_once("./stock/stock.php")?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,8 +25,8 @@
                 foreach ($datas as $data) {
                     echo "<tr>";
                         echo "<td>" . $data['id'] . "</td>";
-                        echo "<td>" . $data['nome'] . "</td>";
-                        echo "<td>" . $data['preco'] . "</td>";
+                        echo "<td>" . $data['nameProduct'] . "</td>";
+                        echo "<td>" . $data['priceProduct'] . "</td>";
                         echo "<td>
                                 <button> <i class='fa fa-check'> </i> </button>" ."
                                 <button><i class='fa fa-times'></i></button>
