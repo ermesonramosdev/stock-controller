@@ -30,7 +30,6 @@ body {
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
-
 .modal {
   display: none;
   position: fixed;
@@ -95,26 +94,98 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botão de confirmar */
+#table button.confirm {
+  background: #28a745;
+  color: white;
+}
+
+#table button.confirm:hover {
+  background: #218838;
+  transform: scale(1.1);
+}
+
+/* Botão de excluir */
+#table button.delete {
+  background: #dc3545;
+  color: white;
+}
+
+#table button.delete:hover {
+  background: #c82333;
+  transform: scale(1.1);
+}
+
+/* Botão de editar */
+#table button.edit {
+  background: #007bff;
+  color: white;
+}
+
+#table button.edit:hover {
+  background: #0056b3;
+  transform: scale(1.1);
 }
 
 #table button i {
   font-size: 18px;
 }
 
-#table button:first-child {
-  background: #28a745;
+#myModalAdd form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+#myModalAdd label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+#myModalAdd input[type="text"],
+#myModalAdd input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#myModalAdd input[type="text"]:focus,
+#myModalAdd input[type="number"]:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+}
+
+#myModalAdd button[type="submit"] {
+  background: #4CAF50;
   color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-#table button:first-child:hover {
-  background: #218838;
+#myModalAdd button[type="submit"]:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-#table button:last-child {
-  background: #dc3545;
-  color: white;
-}
-
-#table button:last-child:hover {
-  background: #c82333;
+#myModalAdd button[type="submit"]:active {
+  background: #3e8e41;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }

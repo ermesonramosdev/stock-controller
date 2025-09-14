@@ -10,7 +10,9 @@
     <title>Controle de estoques</title>
 </head>
 <body>
+    <!-- Botão para abrir modal para visualiar a quantidade dos itens no banco de dados -->
     <button id="openModal">Abrir Modal</button>
+    <!--Tabela principal -->
     <table id="table">
         <thead>
             <tr>
@@ -20,6 +22,7 @@
                 <th>Ações</th>
             </tr>
         </thead>
+        <!-- Exibir os dados do banco de dados na tabela -->
         <tbody>
             <?php 
                 foreach ($datas as $data) {
@@ -28,15 +31,16 @@
                         echo "<td>" . $data['nameProduct'] . "</td>";
                         echo "<td>" . $data['priceProduct'] . "</td>";
                         echo "<td>
-                                <button> <i class='fa fa-check'> </i> </button>" ."
-                                <button><i class='fa fa-times'></i></button>
+                                <button class='confirm'> <i class='fa fa-check'> </i> </button>" ."
+                                <button class='delete'><i class='fa fa-times'></i></button>" . "
+                                <button class='edit'><i class='fa-solid fa-pen'></i> </button>
                             </td>";
                     echo "</tr>";
                 }
             ?>
         </tbody>
     </table> 
-    
+    <!-- Modal para exibir as quantidade de itens no banco de dados -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -52,7 +56,20 @@
             ?>
         </div>
     </div>
-
+    <!-- Modal para adicionar mais itens no banco de dados -->
+    <div id="myModalAdd" class="modal">
+       <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar mais elementos no estoque</h2>
+            <form action="./insertProduct/insertProduct.php" method="post">
+                <label for="nameProduct">Nome do produto:</label>
+                <input type="text" name="nameProduct" id="nameProduct">
+                <label for="priceProduct">Peço do produto:</label>
+                <input type="number" name="priceProduct" id="priceProduct">
+                <button type="submit">Enviar</button>
+            </form>
+       </div>         
+    </div>                   
     <script src="js/script.js"></script>
 </body>
 </html>
