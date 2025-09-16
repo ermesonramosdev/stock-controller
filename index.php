@@ -32,7 +32,10 @@
                         echo "<td>" . $data['priceProduct'] . "</td>";
                         echo "<td>
                                 <button class='confirm'> <i class='fa fa-check'> </i> </button>" ."
-                                <button class='delete'><i class='fa fa-times'></i></button>" . "
+                                <a href='./deleteProduct/deleteProduct.php?id=" . $data['id'] . "' 
+                                    onclick='return confirm(\"Tem certeza que deseja excluir?\")'>
+                                    <button class='delete'><i class='fa fa-times'></i></button>
+                                </a>" . "
                                 <button class='edit'><i class='fa-solid fa-pen'></i> </button>
                             </td>";
                     echo "</tr>";
