@@ -1,5 +1,6 @@
 const openModal = document.querySelector('#openModal');
 const openAddModal = document.querySelectorAll('.confirm');
+const editProduct = document.querySelectorAll('.edit');
 
 //Abrir o Modal
 openModal.addEventListener('click', () => {
@@ -13,6 +14,7 @@ openModal.addEventListener('click', () => {
     });
 });
 
+//Adicionar produto no modal
 openAddModal.forEach((buttonAdd) => {
     buttonAdd.addEventListener('click', () => {
         const myModalAdd = document.querySelector('#myModalAdd');
@@ -22,5 +24,19 @@ openAddModal.forEach((buttonAdd) => {
         closeModalAdd.addEventListener('click', () => {
             myModalAdd.style.display = 'none';
         });
+    });
+});
+
+//Atualiza elementos no modal
+editProduct.forEach((edit) => {
+    edit.addEventListener('click', (event) => {
+        let tr = event.target.parentElement.parentElement.parentElement;
+        const td = Array.from(tr.children);
+        
+        td.forEach(element => {
+            const value = element.textContent;
+            element.innerHTML = `<input type="text" value="${value}"></input>`;
+        });
+        
     });
 });
