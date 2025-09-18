@@ -72,7 +72,21 @@
                 <button type="submit">Enviar</button>
             </form>
        </div>         
-    </div>                   
+    </div>  
+     <!-- Modal para atualizar os itens no banco de dados -->
+    <div id="myModalUpdate" class="modal">
+       <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Atualizar os elementos no estoque</h2>
+            <form action="./updateProduct/updateProduct.php" method="post">
+                <label for="nameProduct">Nome do produto:</label>
+                <input type="text" name="nameProduct" id="nameProduct">
+                <label for="priceProduct">Peço do produto:</label>
+                <input type="number" name="priceProduct" id="priceProduct">
+                <button type="submit">Enviar</button>
+            </form>
+       </div>         
+    </div>                  
     <script src="js/script.js"></script>
 </body>
 </html>

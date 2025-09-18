@@ -30,6 +30,14 @@ openAddModal.forEach((buttonAdd) => {
 //Atualiza elementos no modal
 editProduct.forEach((edit) => {
     edit.addEventListener('click', (event) => {
+        const myModalUpdate = document.querySelector('#myModalUpdate');
+        myModalUpdate.style.display = 'flex';
+
+        const closeModalUpdate = document.querySelector('#myModalUpdate .modal-content .close');
+        closeModalUpdate.addEventListener('click', () => {
+            myModalUpdate.style.display = 'none';
+        });
+
         let tr = event.target.parentElement.parentElement.parentElement;
         const td = Array.from(tr.children);
         
