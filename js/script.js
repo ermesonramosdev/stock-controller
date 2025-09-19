@@ -38,13 +38,19 @@ editProduct.forEach((edit) => {
             myModalUpdate.style.display = 'none';
         });
 
+        //Pegar a linha que foi clicada.
         let tr = event.target.parentElement.parentElement.parentElement;
         const td = Array.from(tr.children);
+
+        const inputsUpdateModal = document.querySelectorAll('#myModalUpdate .modal-content #formUpdate input');
         
-        td.forEach(element => {
-            const value = element.textContent;
-            element.innerHTML = `<input type="text" value="${value}"></input>`;
+        inputsUpdateModal.forEach(input => {
+            console.log(input);
+            td.forEach(element => {
+                if(element.id == 'nameProduct' || element.id == 'priceProduct') {
+                    input.value = element.textContent;
+                } 
+            });
         });
-        
     });
 });

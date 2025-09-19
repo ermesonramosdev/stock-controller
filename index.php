@@ -28,8 +28,8 @@
                 foreach ($datas as $data) {
                     echo "<tr>";
                         echo "<td>" . $data['id'] . "</td>";
-                        echo "<td>" . $data['nameProduct'] . "</td>";
-                        echo "<td>" . $data['priceProduct'] . "</td>";
+                        echo "<td id='nameProduct'>" . $data['nameProduct'] . "</td>";
+                        echo "<td id='priceProduct'>" . $data['priceProduct'] . "</td>";
                         echo "<td>
                                 <button class='confirm'> <i class='fa fa-check'> </i> </button>" ."
                                 <a href='./deleteProduct/deleteProduct.php?id=" . $data['id'] . "' 
@@ -78,12 +78,12 @@
        <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Atualizar os elementos no estoque</h2>
-            <form action="./updateProduct/updateProduct.php" method="post">
+            <form action="./updateProduct/updateProduct.php" method="post" id="formUpdate">
                 <label for="nameProduct">Nome do produto:</label>
                 <input type="text" name="nameProduct" id="nameProduct">
                 <label for="priceProduct">Peço do produto:</label>
                 <input type="number" name="priceProduct" id="priceProduct">
-                <button type="submit">Enviar</button>
+                <button type="submit">Atualizar</button>
             </form>
        </div>         
     </div>                  
