@@ -1,4 +1,5 @@
 <?php include_once("./stock/stock.php")?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -65,10 +66,10 @@
             <span class="close">&times;</span>
             <h2>Adicionar mais elementos no estoque</h2>
             <form action="./insertProduct/insertProduct.php" method="post">
-                <label for="nameProduct">Nome do produto:</label>
-                <input type="text" name="nameProduct" id="nameProduct">
+                <label for="nameProductAdd">Nome do produto:</label>
+                <input type="text" name="nameProductAdd" id="nameProductAdd">
                 <label for="priceProduct">Peço do produto:</label>
-                <input type="number" name="priceProduct" id="priceProduct">
+                <input type="number" name="priceProductAdd" id="priceProductAdd">
                 <button type="submit">Enviar</button>
             </form>
        </div>         
@@ -79,10 +80,10 @@
             <span class="close">&times;</span>
             <h2>Atualizar os elementos no estoque</h2>
             <form action="./updateProduct/updateProduct.php" method="post" id="formUpdate">
-                <label for="nameProduct">Nome do produto:</label>
-                <input type="text" name="nameProduct" id="nameProduct">
-                <label for="priceProduct">Peço do produto:</label>
-                <input type="number" name="priceProduct" id="priceProduct">
+                <label for="nameProductUpdate">Nome do produto:</label>
+                <input type="text" name="nameProductUpdate" id="nameProductUpdate">
+                <label for="priceProductUpdate">Peço do produto:</label>
+                <input type="number" name="priceProductUpdate" id="priceProductUpdate">
                 <button type="submit">Atualizar</button>
             </form>
        </div>         

@@ -2,8 +2,8 @@
     include_once(__DIR__ . "/../connection/connection.php");
 
     if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-        $nameProduct = $_POST['nameProduct'];
-        $priceProduct = $_POST['priceProduct'];
+        $nameProduct = $_POST['nameProductAdd'];
+        $priceProduct = $_POST['priceProductAdd'];
 
         if($nameProduct && $priceProduct) {
             $sql = "INSERT INTO products (nameProduct, priceProduct) VALUES (?,?)";
