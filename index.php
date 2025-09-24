@@ -69,7 +69,7 @@
                 <label for="nameProductAdd">Nome do produto:</label>
                 <input type="text" name="nameProductAdd" id="nameProductAdd">
                 <label for="priceProduct">Peço do produto:</label>
-                <input type="number" name="priceProductAdd" id="priceProductAdd">
+                <input type="number" step="0.01" name="priceProductAdd" id="priceProductAdd">
                 <button type="submit">Enviar</button>
             </form>
        </div>         
@@ -80,10 +80,11 @@
             <span class="close">&times;</span>
             <h2>Atualizar os elementos no estoque</h2>
             <form action="./updateProduct/updateProduct.php" method="post" id="formUpdate">
+                <input type="text" name="idProductUpdate" id="idProductUpdate" style="display: none;">
                 <label for="nameProductUpdate">Nome do produto:</label>
-                <input type="text" name="nameProductUpdate" id="nameProductUpdate">
+                <input type="text" name="nameProductUpdate">
                 <label for="priceProductUpdate">Peço do produto:</label>
-                <input type="number" name="priceProductUpdate" id="priceProductUpdate">
+                <input type="number" step="0.01" name="priceProductUpdate">
                 <button type="submit">Atualizar</button>
             </form>
        </div>         

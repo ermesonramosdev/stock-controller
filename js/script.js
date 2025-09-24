@@ -41,17 +41,20 @@ editProduct.forEach((edit) => {
         //Pegar a linha que foi clicada.
         let tr = event.target.closest('tr');
         const td = Array.from(tr.children);
-        console.log(td);
 
         const inputsUpdateModal = document.querySelectorAll('#myModalUpdate .modal-content #formUpdate input');
         const inputsUpdate = Array.from(inputsUpdateModal);
-        console.log(inputsUpdate);
         
         inputsUpdate.forEach((input, inputIndex) => {
             td.forEach((td, tdIndex)=> {
-               if (inputIndex == 0 && tdIndex == 1 || inputIndex == 1 && tdIndex == 2) {
-                input.value = td.textContent
+               if ((inputIndex == 1 && tdIndex == 1) || (inputIndex == 2 && tdIndex == 2)) {
+                input.value = td.textContent;
                }
+               if (tdIndex == 0) {
+                    const idProductUpdate = document.querySelector('#idProductUpdate');
+                    let idUpdate = td.textContent;
+                    idProductUpdate.value = idUpdate;
+                }
             });
         });
     });
