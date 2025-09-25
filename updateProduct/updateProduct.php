@@ -6,10 +6,10 @@
         $nameProductUpdate = $_POST['nameProductUpdate'];
         $priceProductUpdate = $_POST['priceProductUpdate'];
 
-        if (!empty($nameProductUpdate) && !empty($priceProductUpdate)) {
-            echo $idProductUpdate . "</br>";
-            echo $nameProductUpdate . "</br>";
-            echo $priceProductUpdate;
+        if (!empty($idProductUpdate) && !empty($nameProductUpdate) && !empty($priceProductUpdate)) {
+            $sql = "UPDATE products SET nameProduct=?, priceProduct=? WHERE id=?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$nameProductUpdate, $priceProductUpdate, $idProductUpdate]);
         }
     }
 
